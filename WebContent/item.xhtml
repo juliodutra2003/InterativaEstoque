@@ -1,0 +1,79 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    template="layout/template.xhtml">
+
+<ui:define name="body">
+
+    <h:form id="itemForm">
+
+        <rich:panel>
+            <f:facet name="header">Novo item</f:facet>
+
+            <s:decorate id="nameField" template="layout/edit.xhtml">
+            
+            <h:panelGrid id="panel" columns="2" border="1" cellpadding="10" cellspacing="1">
+            
+                <h:outputLabel value="Número Serial:" />
+                <h:inputText id="serialnumber" required="true" requiredMessage="Error: Campo obrigatório"
+                             value="#{item.numeroSerial}"
+                             maxlength="150"
+                             />		
+                	
+                <h:outputLabel value="Modelo:" />	    
+                <h:selectOneMenu id="model" required="true" requiredMessage="Error: Campo obrigatório"
+                                 value="#{item.modelo}" >
+                    <f:selectItem itemLabel=" - Selecione um modelo - " />
+                	<f:selectItems value="#{modeloList.selectItems}" 
+                				   var="modeloitem" 
+                				   label="#{modeloitem.label}"
+                				   itemValue="#{modeloitem.value}"
+                				   />
+                	<s:convertEntity />
+                </h:selectOneMenu>
+                
+              <h:outputLabel value="Categoria:" />                      
+                <h:selectOneMenu id="category" required="true" requiredMessage="Error: Campo obrigatório"
+                				 value="#{item.categoria}">
+                	<f:selectItem itemLabel=" - Selecione uma categoria - " />
+                	<f:selectItems value="#{categoriaList.selectItems}" 
+                				   var="categoriaitem"
+                				   label="#{categoriaitem.label}"
+                				   itemValue="#{categoriaitem.value}"
+                				   />	
+                	<s:convertEntity />   
+                </h:selectOneMenu>	
+            
+            </h:panelGrid>
+                
+            </s:decorate>
+
+            <div style="clear:both"/>
+
+        </rich:panel>
+
+        <div class="actionButtons">
+            <h:commandButton id="save"
+                          value="Save"
+                         action="#{itemController.salvarNovoItem()}"
+                       rendered="#{item.id == null}"/>
+            <h:commandButton id="update"
+                          value="Salvar"
+                         action="#{itemController.atualizarItem()}"
+                       rendered="#{item.id != null}"/>
+            <s:button propagation="end"
+                               id="cancel"
+                            value="Voltar"
+                             view="/itemList.xhtml"/>
+        </div>
+
+    </h:form>
+
+</ui:define>
+
+</ui:composition>

@@ -1,0 +1,105 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    template="layout/template.xhtml"
+                xmlns:a4j="http://richfaces.org/a4j">
+
+<ui:define name="body">
+
+            <rich:modalPanel id="panelmodal" width="350" height="100">
+			     <f:facet name="header">
+			          <h:panelGroup>
+			               <h:outputText value="Confirmar?"></h:outputText>
+			          </h:panelGroup>
+			     </f:facet>
+					Confirmar esta operação?          			     
+			     <s:button id="yes" value="Sim"  immediate="true" action="#{itemController.SetEmEstoque()}" />        
+			     <s:button id="no" value="Não" />
+			</rich:modalPanel>
+			
+    <rich:panel>
+        <f:facet name="header">Lista de itens</f:facet>
+        <h:outputText value="Total: #{itens.size} "
+                       rendered="#{not empty itens}"/>			
+        <div class="results">	
+			
+            <h:outputText value="Nenhum item cadastrado."
+                       rendered="#{empty itens}"/>
+
+            <rich:dataTable id="itemList" var="selecteditem" value="#{itens}" rendered="#{not empty itens}">
+                <h:column>
+                    <f:facet name="header">Id</f:facet>
+                    #{selecteditem.id}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Número Serial</f:facet>
+                    <s:link id="editarnumeroSerial"
+                         value="#{selecteditem.numeroSerial}"
+                   propagation="none"
+                         view="/item.xhtml"
+                         action="#{itemController.editarItem()}">
+                    </s:link>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Modelo</f:facet>
+                    <s:link id="editarModelo"
+                         value="#{selecteditem.modelo.nome}"
+                   propagation="none"
+                         view="/item.xhtml"
+                         action="#{itemController.editarItem()}">
+                    </s:link>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Categoria</f:facet>
+                    <s:link id="editarCategoria"
+                         value="#{selecteditem.categoria.nome}"
+                   propagation="none"
+                         view="/item.xhtml"
+                         action="#{itemController.editarItem()}">
+                    </s:link>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Status</f:facet>
+                    <h:outputText value="Em estoque"
+                       rendered="#{selecteditem.emestoque == 1}"/>
+                    <h:outputText value="Fora de estoque"
+                       rendered="#{selecteditem.emestoque == 0}"/>
+                </h:column>
+                <h:column >
+                    <f:facet name="header" >Movimentação</f:facet>
+                    <a4j:form>
+	                    <a4j:commandButton id="btnTira" action="#{itemController.SelecionaItem(selecteditem)}" immediate="true"
+	                              value="Tirar do estoque"
+	                    		  type="submit"
+	                              rendered="#{selecteditem.emestoque == 1}">
+	                              <rich:componentControl for="panelmodal" operation="show" event="onclick" />
+	                    </a4j:commandButton>
+	                    <a4j:commandButton id="btnColoca" action="#{itemController.SelecionaItem(selecteditem)}"  immediate="true"
+	                              value="Colocar no estoque"
+	                              type="submit"
+	                              rendered="#{selecteditem.emestoque == 0}">
+	                              <rich:componentControl for="panelmodal" operation="show" event="onclick"/>
+	                    </a4j:commandButton>
+	               </a4j:form>
+	               
+                </h:column>
+            </rich:dataTable>
+        </div>
+
+    </rich:panel>
+
+    <div class="actionButtons">
+        <s:button id="novo"
+               value="Novo item"
+                view="/item.xhtml"
+                action="#{itemController.novoItem()}"/>
+    </div>
+
+</ui:define>
+
+</ui:composition>
