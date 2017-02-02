@@ -7,6 +7,12 @@ import org.jboss.seam.log.Log;
 import org.jboss.seam.security.Credentials;
 import org.jboss.seam.security.Identity;
 
+/**
+ *  
+ * @author julio
+ * 
+ */
+
 @Name("authenticator")
 public class Authenticator
 {

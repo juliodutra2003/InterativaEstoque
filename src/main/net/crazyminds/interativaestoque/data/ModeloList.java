@@ -10,6 +10,13 @@ import org.jboss.seam.framework.EntityQuery;
 
 import net.crazyminds.interativaestoque.model.Modelo;
 
+/**
+ *  
+ * @author julio
+ *
+ * Esta classe controla as chamadas oriundas da interface modeloList.xhtml
+ */
+
 @Name("modeloList")
 public class ModeloList extends EntityQuery<Modelo>
 {

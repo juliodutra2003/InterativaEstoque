@@ -15,6 +15,12 @@ import javax.persistence.GeneratedValue;
 import org.hibernate.validator.NotNull;
 import org.jboss.seam.annotations.Name;
 
+/**
+ *  
+ * @author julio
+ *
+ */
+
 @Entity
 @Name("movimentacao")
 public class Movimentacao implements Serializable

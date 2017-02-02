@@ -9,6 +9,13 @@ import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 
+/**
+ *  
+ * @author julio
+ *
+ * Esta classe controla as operações em banco de dados para a entidade Item 
+ */
+
 @Name("itemDao")
 @Scope(ScopeType.APPLICATION)
 public class ItemDao implements Serializable, IItemDao{

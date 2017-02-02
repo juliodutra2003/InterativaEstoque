@@ -22,6 +22,13 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+/**
+ *  
+ * @author julio
+ *
+ * Esta classe controla as chamadas oriundas da interface itemList.xhtml e item.xhtml
+ */
+
 @Name("itemController")
 @Scope(ScopeType.SESSION)
 public class ItemController implements Serializable, IItemController

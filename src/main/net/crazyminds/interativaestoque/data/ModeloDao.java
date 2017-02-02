@@ -8,6 +8,14 @@ import org.jboss.seam.framework.EntityHome;
 
 import net.crazyminds.interativaestoque.model.Modelo;
 
+/**
+ *  
+ * @author julio
+ *
+ * Esta classe controla as chamadas oriundas da interface modelo.xhtml
+ * Como é uma classe muito simples, este Dao ainda não precisa ser protejido por uma classe controller/action
+ */
+
 @Name("modeloDao")
 public class ModeloDao extends EntityHome<Modelo>
 {

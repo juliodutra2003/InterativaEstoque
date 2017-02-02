@@ -62,13 +62,17 @@ As propriedades principais de uma movimentação são: número serial do item mo
 
 ##//TODO
 
+Design de arquitetura:
+- Melhor desacoplamento das classe de controller e de modelo
+- Melhor desacoplamento da camada de controle e camada de view.
+
+Funcionalidades
 - Validação dos campos de criação e edição nos formulários;
 - Controle de erros para preenchimento de campos nos formulários;
 - Feedbacks adequados para cada situação de uso e de erro do sistema;
 - Listagens paginadas;
-- Login
+- Login: os componentes foram criados, falta configurar e ativar;
 - Filtros por tipo de atributos nas listagens;
 - Melhor forma de configuração para o sistema, em vez de utilizar valores da base de dados;
-- Melhor desacoplar a camada de controle da camada de view.
 - Criar mais dialogs para prevenir alteração de dados indesejadas.
 - Corrigir navegação: após criação de determinado componente, redirecionar para respectiva lista.

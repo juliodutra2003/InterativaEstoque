@@ -7,6 +7,14 @@ import org.jboss.seam.framework.EntityHome;
 
 import net.crazyminds.interativaestoque.model.Movimentacao;
 
+/**
+ *  
+ * @author julio
+ *
+ * Esta classe controla as operações em banco de dados para a entidade movimentacao 
+ * 
+ */
+
 @Name("movimentacaoDao")
 public class MovimentacaoDao extends EntityHome<Movimentacao>
 {

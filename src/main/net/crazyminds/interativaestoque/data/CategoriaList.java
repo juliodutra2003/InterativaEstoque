@@ -10,6 +10,13 @@ import org.jboss.seam.framework.EntityQuery;
 
 import net.crazyminds.interativaestoque.model.Categoria;
 
+/**
+ *  
+ * @author julio
+ *
+ * Esta classe controla as chamadas oriundas da interface categoriaList.xhtml
+ */
+
 @Name("categoriaList")
 public class CategoriaList extends EntityQuery<Categoria>
 {

@@ -14,6 +14,12 @@ import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 
+/**
+ *  
+ * @author julio
+ *
+ */
+
 @Entity
 @Name("modelo")
 @Scope(ScopeType.SESSION)

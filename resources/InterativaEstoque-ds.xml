@@ -8,8 +8,8 @@
       <use-java-context>true</use-java-context>
       <connection-url>jdbc:mysql://localhost:3306/interativa</connection-url>
       <driver-class>com.mysql</driver-class>
-      <user-name>julio</user-name>
-      <password>lort2t,2185</password>
+      <user-name>usuariodobancodedados</user-name>
+      <password>senhausuariodobancodedados</password>
         
   </local-tx-datasource>    
 </datasources>

@@ -8,6 +8,12 @@ import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import org.hibernate.validator.NotNull;
 
+/**
+ *  
+ * @author julio
+ *
+ */
+
 @Entity
 public class TipoMovimentacao implements Serializable
 {

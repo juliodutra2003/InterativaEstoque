@@ -6,6 +6,14 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.framework.EntityQuery;
 import net.crazyminds.interativaestoque.model.TipoMovimentacao;
 
+/**
+ *  
+ * @author julio
+ *
+ * Esta classe controla as chamadas oriundas da interface tipoMovimentacaoList.xhtml
+ */
+
+
 @Name("tipoMovimentacaoList")
 public class TipoMovimentacaoList extends EntityQuery<TipoMovimentacao>
 {

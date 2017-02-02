@@ -1,5 +1,13 @@
 package net.crazyminds.interativaestoque.data;
 
+/**
+ *  
+ * @author julio
+ *
+ * Esta classe controla a busca pela lista de items em banco de dados.
+ * Esta classe é protejida pela classe ItemController
+ */
+
 	import org.jboss.seam.annotations.Name;
 	import org.jboss.seam.framework.EntityQuery;
 

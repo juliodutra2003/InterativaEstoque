@@ -14,6 +14,12 @@ import org.jboss.seam.annotations.Scope;
 
 import javax.persistence.GeneratedValue;
 
+/**
+ *  
+ * @author julio
+ *
+ */
+
 @Entity
 @Name("categoria")
 @Scope(ScopeType.SESSION)

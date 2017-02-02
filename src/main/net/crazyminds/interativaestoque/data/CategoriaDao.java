@@ -7,6 +7,14 @@ import org.jboss.seam.framework.EntityHome;
 
 import net.crazyminds.interativaestoque.model.Categoria;
 
+
+/**
+ *  
+ * @author julio
+ *
+ * Esta classe controla as chamadas oriundas da interface categoria.xhtml
+ * Como é uma classe muito simples, este Dao ainda não precisa ser protejido por uma classe controller/action
+ */
 @Name("categoriaDao")
 public class CategoriaDao extends EntityHome<Categoria>
 {

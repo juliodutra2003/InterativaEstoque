@@ -12,6 +12,12 @@ import javax.persistence.ManyToOne;
 import org.hibernate.validator.NotNull;
 import org.jboss.seam.annotations.Name;
 
+/**
+ *  
+ * @author julio
+ *
+ */
+
 @Entity
 @Name("item")
 public class Item implements Serializable
