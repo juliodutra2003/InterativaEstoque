@@ -63,7 +63,7 @@ As propriedades principais de uma movimentação são: número serial do item mo
 ##//TODO
 
 Design de arquitetura:
-- Melhor desacoplamento das classe de controller e de modelo
+- Melhor desacoplamento das classes de controller e de modelo
 - Melhor desacoplamento da camada de controle e camada de view.
 
 Funcionalidades
